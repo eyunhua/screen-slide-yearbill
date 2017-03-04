@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+		<title>遇·见</title>
+		<script>
+			(function(win,doc){
+		        win.onload=win.onresize=function(){
+		            doc.documentElement.style.fontSize = 20 * doc.documentElement.clientWidth/375 + 'px';
+		        };
+			})(window,document);
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/public.css">
+		<script src="js/jquery-1.12.3.min.js"></script>
+		<script type="text/javascript">
+		</script>
+		<style type="text/css">
+		.slider_screen_wrap{width: 100%;height: 100%;position: relative; overflow: hidden;}
+		.slider_screen_con{width: 100%;height: 500%;position: absolute;left: 0;top: 0;}
+		.slider_page{width: 100%;height: 20%;background: url('images/bg.jpg') no-repeat;background-size: 100% 100%;position: relative;}
+		/*封面图----“遇见”*/
+		@keyframes first_font_move{
+			from{width: 1.6rem;height: 3.8328rem;position: absolute;top: 4.75rem;left: 50%;margin-left: -0.8rem;opacity: 0;}
+			to{width: 2.15rem; height: 5.15rem;position: absolute;top: 4.75rem;left: 50%;margin-left: -1.075rem;opacity: 1;}
+		}
+		@-webkit-keyframes first_font_move{
+			from{width: 1.6rem;height: 3.8328rem;position: absolute;top: 4.75rem;left: 50%;margin-left: -0.8rem;opacity: 0;}
+			to{width: 2.15rem; height: 5.15rem;position: absolute;top: 4.75rem;left: 50%;margin-left: -1.075rem;opacity: 1;}
+		}
+		.first_font_show{width: 2.15rem; height: 5.15rem;position: absolute;top: 4.75rem;left: 50%;margin-left: -1.075rem;animation:first_font_move 1s ease-in-out; -webkit-animation:first_font_move 1s ease-in-out;z-index: 11;}
+		/*封面图----遇见旁边的上引号*/
+		.first_quto_up{width: 0.9rem;height: 1.65rem;position: absolute;left: 7.15rem;top: 3.825rem;transition: opacity 2s;-moz-transition: opacity 2s;-webkit-transition: opacity 2s;-o-transition: opacity 2s;opacity: 0;z-index: 11;}
+		.first_quto_up_hov{opacity: 1;}
+		/*封面图----小人*/
+		@keyframes first_person_move{
+			from{opacity: 0;}
+			to{opacity: 1;}
+		}
+		@-webkit-keyframes first_person_move{
+			from{opacity: 0;}
+			to{opacity: 1;}
+		}
+		.first_person{ position: absolute; top: 0; left: 0; width: 100%; height: 100%;opacity: 1;animation: first_person_move 2s ease-in-out;-webkit-animation: first_person_move 2s ease-in-out;z-index: 10;}
+		/*封面图----标语*/
+		.first_slogan{color: #fff;font-size: 0.75rem;text-align: center;z-index: 11;}
+		.first_slogan div{padding: 0.375rem 0;width: 90%;margin: 0 auto;z-index: 11;}
+		.first_slogan_year{color: #ea715e;font-weight: bold;font-size: 1rem;}
+		.first_slogan .first_line{position: absolute;left: 5%;top: 20rem;opacity:0;transition:all 2s ease-in-out 1s;-moz-transition: all 2s ease-in-out 1s;-webkit-transition: all 2s ease-in-out 1s;-o-transition:all 2s ease-in-out 1s;}
+		.first_slogan .second_line{position: absolute;left: 5%;top: 21rem;opacity:0;transition:all 2s ease-in-out 2s;-moz-transition: all 2s ease-in-out 2s;-webkit-transition: all 2s ease-in-out 2s;-o-transition:all 2s ease-in-out 2s;}
+		.first_slogan .third_line{position: absolute;left: 5%;top: 22rem;opacity:0;transition:all 2s ease-in-out 3s;-moz-transition: all 2s ease-in-out 3s;-webkit-transition: all 2s ease-in-out 3s;-o-transition:all 2s ease-in-out 3s;}
+		.first_slogan .first_line_hov{top:11.95rem;opacity: 1;}
+		.first_slogan .second_line_hov{top:13.35rem;opacity: 1;}
+		.first_slogan .third_line_hov{top:14.4rem;opacity: 1;}
+		/*封面图----向下箭头*/
+		@keyframes down_arr_move{
+			from{ top: 94%; }
+			to{ top: 95%; }
+		}
+		@-webkit-keyframes down_arr_move{
+			from{ top: 94%; }
+			to{ top: 95%; }
+		}
+		.down_arr{width: 1.25rem; height: 1.225rem; position: absolute; top: 95%; left: 50%; margin-left: -0.625rem;animation:down_arr_move 1s linear 0s infinite alternate;-webkit-animation: down_arr_move 1s linear 0s infinite alternate;z-index: 11;}
+		/*第二页----“我们的相识”/第三页----“我们的相知”*/
+		.second_font_show,.third_font_show,.four_font_show{width: 1.775rem; height: 0.85rem;position: absolute;left: 1.75rem; top:3.05rem; z-index: 11; opacity: 0; transition:all 2s ease-in-out;-moz-transition:all 2s ease-in-out;-webkit-transition:all 2s ease-in-out;-o-transition:all 2s ease-in-out;}
+		.second_font_show_hov,.third_font_show_hov,.four_font_show_hov{width: 9.775rem; height: 1.85rem;opacity: 1;}
+		/*第二页----小人/第三页----小人*/
+		.second_person,.third_person,.four_person{ position: absolute; top: 0; left: 0; width: 100%; height: 100%;opacity: 0;z-index: 10;transition:opacity 2s ease-in-out;-moz-transition:opacity 2s ease-in-out;-webkit-transition:opacity 2s ease-in-out;-o-transition:opacity 2s ease-in-out;}
+		.second_person_hov,.third_person_hov,.four_person_hov{opacity: 1;}
+		/*第二页----我们的相识下面的红线/第三页----我们的相知下面的红线/第四页----我们的秘密下面的红线*/
+		.second_red_line,.third_red_line,.four_red_line{width: 0;height: 1px;background: #ea715e;position: absolute;left: 1.75rem; top:5.25rem; z-index: 11;transition:width 1s linear 2s;-moz-transition:width 1s linear 2s;-webkit-transition:width 1s linear 2s;-o-transition:width 1s linear 2s;}
+		.second_red_line_hov,.third_red_line_hov,.four_red_line_hov{width: 9.775rem;}
+		/*第二页----“我们的相识”旁边的下引号/第三页----“我们的相知”旁边的下引号*/
+		.second_quto_down,.third_quto_down,.four_quto_down{width: 0.85rem; height: 1.625rem; position: absolute; left: 11.75rem; top: 2.925rem; z-index: 11;opacity: 0;transition:opacity 2s ease-in-out 2s;-moz-transition:opacity 2s ease-in-out 2s;-webkit-transition:opacity 2s ease-in-out 2s;-o-transition:opacity 2s ease-in-out 2s;}
+		.second_quto_down_hov,.third_quto_down_hov,.four_quto_down_hov{opacity: 1;}
+		/*第二页----与万千人中，与你相识  是命中注定的缘分/第三页----信任让彼此的生活紧紧交织在一起  可靠而安心/第四页----相识、熟悉、牵挂、思念，我们懂得珍惜每一次的遇见*/
+		.second_yuanfen,.third_xinren,.four_shuxi{ width: 7.4rem; height: 1.7rem; position: absolute; left: 1.75rem; top: 5.9rem; z-index: 11;opacity: 0;transition:opacity 2s ease-in-out 3s;-moz-transition:opacity 2s ease-in-out 3s;-webkit-transition:opacity 2s ease-in-out 3s;-o-transition:opacity 2s ease-in-out 3s;}
+		.third_xinren{width: 10.175rem;}
+		.second_yuanfen_hov,.third_xinren_hov,.four_shuxi_hov{opacity: 1;}
+		/*第二页----标语/第三页----标语*/
+		.second_slogan,.third_slogan{font-size: 0.7rem; color: #fff;}
+		.second_slogan .first_line,.third_slogan .first_line{width:15.5rem; position: absolute; top: 14rem; left: 1.73rem; z-index: 11; padding: 0.4rem 0; opacity: 0;transition:all 2s ease-in-out 3s;-moz-transition:all 2s ease-in-out 3s;-webkit-transition:all 2s ease-in-out 3s;-o-transition:all 2s ease-in-out 3s;}
+		.third_slogan .first_line{line-height: 1.5rem;}
+		.second_slogan .second_line,.third_slogan .second_line{width:15.5rem; position: absolute; top: 18rem; left: 1.73rem; z-index: 11; padding: 0.4rem 0;opacity: 0;line-height: 1.5rem;transition:all 2s ease-in-out 4s;-moz-transition:all 2s ease-in-out 4s;-webkit-transition:all 2s ease-in-out 4s;-o-transition:all 2s ease-in-out 4s;}
+		.second_slogan .third_line{width:15.5rem; position: absolute; top: 22rem; left: 1.73rem; z-index: 11; padding: 0.4rem 0;opacity: 0;transition:all 2s ease-in-out 5s;-moz-transition:all 2s ease-in-out 5s;-webkit-transition:all 2s ease-in-out 5s;-o-transition:all 2s ease-in-out 5s;}
+		.second_slogan .first_line_hov,.third_slogan .first_line_hov{top: 10.1rem; opacity: 1;}
+		.second_slogan .second_line_hov{top: 11.65rem; opacity: 1;}
+		.second_slogan .third_line_hov{top: 14.75rem; opacity: 1;}
+		.third_slogan .second_line_hov{top: 13.45rem; opacity: 1;}
+		/*红色的字体*/
+		.bold_red_font{font-weight: bold; color: #ea715e;}
+		/*蓝色的字体*/
+		.bold_blue_font{font-weight: bold; color: #02fff1;font-size: 1.1rem;}
+		</style>
+	</head>
+	<body>
+		<div class="slider_screen_wrap">
+			<div class="slider_screen_con">
+				<!--封面-->
+				<div id="first_page" class="slider_page">
+					<!--遇见-->
+					<div class="first_font_show">
+						<img src="images/yujian.png" width="100%" height="100%">
+					</div>
+					<!--引号-->
+					<div class="first_quto_up">
+						<img src="images/quto_up.png" width="100%" height="100%">
+					</div>
+					<!--小人-->
+					<div class="first_person">
+						<img src="images/first_person.gif" width="100%" height="100%">
+					</div>
+					<!--标语-->
+					<div class="first_slogan">
+						<div class="first_line">被关爱着，是一种力量</div>
+						<div class="second_line">让你有勇气扬帆起航</div>
+						<div class="third_line"><span class="first_slogan_year">2017</span>年，车联陪你携手同行！</div>
+					</div>
+					<!--箭头-->
+					<div class="down_arr">
+						<img src="images/down_arrow.png" width="100%" height="100%">
+					</div>
+				</div>
+				<!--第二页-我们的相识-->
+				<div id="second_page" class="slider_page">
+					<!--我们的相识-->
+					<div class="second_font_show">
+						<img src="images/xiangshi.png" width="100%" height="100%">
+					</div>
+					<!--我们的相识下面的红线-->
+					<div class="second_red_line"></div>
+					<!--下引号-->
+					<div class="second_quto_down">
+						<img src="images/quto_down.png" width="100%" height="100%">
+					</div>
+					<!--与万千人中，与你相识  是命中注定的缘分-->
+					<div class="second_yuanfen">
+						<img src="images/second_yuanfen.png" width="100%" height="100%">
+					</div>
+					<!--标语-->
+					<div class="second_slogan">
+						<div class="first_line"><span class="bold_red_font">2016年6月1日</span>一个蓦然回首你我<span class="bold_blue_font">相遇</span>茫茫人海</div>
+						<div class="second_line"><span class="bold_red_font">2016年6月2日</span>的<span class="bold_blue_font">第一笔交易</span>，那是我们第一次约会，我们牵起对方的手决定再也不放开</div>
+						<div class="third_line">在<span class="bold_red_font">2016</span>年接近尾声时我们迎来了第<span class="bold_font">0</span>次<span class="bold_blue_font">约会</span></div>
+					</div>
+					<!--小人-->
+					<div class="second_person">
+						<img src="images/second_person.gif" width="100%" height="100%">
+					</div>
+					<!--箭头-->
+					<div class="down_arr">
+						<img src="images/down_arrow.png" width="100%" height="100%">
+					</div>
+				</div>
+				<!--第三页-我们的相知-->
+				<div id="third_page" class="slider_page">
+					<!--我们的相知-->
+					<div class="third_font_show">
+						<img src="images/xiangzhi.png" width="100%" height="100%">
+					</div>
+					<!--我们的相知下面的红线-->
+					<div class="third_red_line"></div>
+					<!--下引号-->
+					<div class="third_quto_down">
+						<img src="images/quto_down.png" width="100%" height="100%">
+					</div>
+					<!--任让彼此的生活紧紧交织在一起  可靠而安心-->
+					<div class="third_xinren">
+						<img src="images/third_xinren.png" width="100%" height="100%">
+					</div>
+					<!--标语-->
+					<div class="third_slogan">
+						<div class="first_line">我们一起参加过<span class="bold_blue_font">车联力量、为你加油；你加油我送券</span></div>
+						<div class="second_line">共获得了<span class="bold_red_font">1000</span>元最佳拍档优惠奖励</div>
+					</div>
+					<!--小人-->
+					<div class="third_person">
+						<img src="images/third_person.gif" width="100%" height="100%">
+					</div>
+					<!--箭头-->
+					<div class="down_arr">
+						<img src="images/down_arrow.png" width="100%" height="100%">
+					</div>
+				</div>
+				<!--第四页-我们的秘密-->
+				<div id="four_page" class="slider_page">
+					<!--我们的秘密-->
+					<div class="four_font_show">
+						<img src="images/mimi.png" width="100%" height="100%">
+					</div>
+					<!--我们的秘密下面的红线-->
+					<div class="four_red_line"></div>
+					<!--下引号-->
+					<div class="four_quto_down">
+						<img src="images/quto_down.png" width="100%" height="100%">
+					</div>
+					<!--相识、熟悉、牵挂、思念，我们懂得珍惜每一次的遇见-->
+					<div class="four_shuxi">
+						<img src="images/four_shuxi.png" width="100%" height="100%">
+					</div>
+					<!--标语-->
+					<div class="third_slogan">
+						<div class="first_line">我们一起参加过<span class="bold_blue_font">车联力量、为你加油；你加油我送券</span></div>
+						<div class="second_line">共获得了<span class="bold_red_font">1000</span>元最佳拍档优惠奖励</div>
+					</div>
+					<!--小人-->
+					<div class="four_person">
+						<img src="images/four_person.gif" width="100%" height="100%">
+					</div>
+					<!--箭头-->
+					<div class="down_arr">
+						<img src="images/down_arrow.png" width="100%" height="100%">
+					</div>
+				</div>
+				<!--第五页-未来-->
+				<div id="five_page" class="slider_page">
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var moveDom = document.getElementsByClassName('slider_screen_con')[0];//滑动的dom元素
+		slideShowEvent(moveDom);
+		//滑动事件
+		function slideShowEvent(moveDom){
+			var startPointY = 0,//开始坐标相对于浏览器页面（客户区）的垂直距离
+				endPointY = 0,//结束坐标相对于浏览器页面（客户区）的垂直距离
+				startPointTop = 0;//开始坐标父元素的top值
+			moveDom.addEventListener('touchstart',function(e){
+				e.preventDefault();
+				startPointY = e.changedTouches[0].clientY;
+				startPointTop = Math.abs($('.slider_screen_con').offset().top);
+			},false);
+			moveDom.addEventListener('touchend',function(e){
+				e.stopPropagation();
+				endPointY = e.changedTouches[0].clientY;//结束坐标
+				var targetDom = $('#'+e.target.id);
+				if(!$(e.target).hasClass('slider_page')){
+					targetDom = $(e.target).parents('.slider_page');
+				}
+				var targetIndex = targetDom.index(),//当前触点的索引
+					moveDistance = 0;//移动的距离
+				if(startPointY - endPointY > 0){//向上滑
+					if(startPointY - endPointY > $('body').height()/3){//滑动的距离达到整个body的四分之一时，滑到下一页
+						if(targetIndex + 1 == $('.slider_screen_con').children().length){
+							targetIndex = targetIndex - 1;
+						}
+						moveDistance = (targetIndex+1) * $('.slider_screen_wrap').height();
+						everyPageAnimation(targetDom,'up');
+					}else{
+						moveDistance = targetIndex * $('.slider_screen_wrap').height();
+					}
+					$('.slider_screen_con').css('top','-'+moveDistance+'px');
+				}else{//向下滑
+					if(endPointY - startPointY > $('body').height()/3){
+						if(targetIndex == 0){
+							targetIndex = 1;
+						}
+						moveDistance = (targetIndex-1) * $('.slider_screen_wrap').height();
+						everyPageAnimation(targetDom,'down');
+					}else{
+						moveDistance = targetIndex * $('.slider_screen_wrap').height();
+					}
+					$('.slider_screen_con').css('top','-'+moveDistance+'px');
+				}
+			},false);
+			moveDom.addEventListener('touchmove',function(e){
+				//touchmove移动的距离=当前触点相对于浏览器的垂直距离-开始触点相对于浏览器的垂直距离-开始触点父元素的top值
+				var timeMoveDistance = (e.changedTouches[0].clientY - startPointY - startPointTop) + 'px';
+				document.getElementsByClassName('slider_screen_con')[0].style.top = timeMoveDistance;
+			},false);
+		}
+		//"遇见"动画结束后
+		function firstFontMoveEnd(){
+			$('.first_quto_up').addClass('first_quto_up_hov');
+			$('.first_slogan .first_line').addClass('first_line_hov');//标语动画
+			$('.first_slogan .second_line').addClass('second_line_hov');//标语动画
+			$('.first_slogan .third_line').addClass('third_line_hov');//标语动画
+		}
+		document.getElementsByClassName('first_font_show')[0].addEventListener('animationend',firstFontMoveEnd,false);
+		document.getElementsByClassName('first_font_show')[0].addEventListener('webkitAnimationEnd',firstFontMoveEnd,false);
+		//何时触发每一页的动画
+		function everyPageAnimation(targetDom,type){
+			var targetDomId = targetDom.attr('id');
+			if(type == 'up'){//向上滑
+				if(targetDomId == 'first_page'){//需加载第二页的动画特效
+					secondPageAnimation();
+				}else if(targetDomId == 'second_page'){//需加载第三页的动画特效
+					thirdPageAnimation();
+				}else if(targetDomId == 'third_page'){//需加载第四页的动画特效
+					fourPageAnimation();
+				}else if(targetDomId == 'four_page'){//需加载第五页的动画特效
+
+				}
+			}else if(type == 'down'){//向下滑
+				if(targetDomId == 'second_page'){//需加载第一页的动画特效
+
+				}else if(targetDomId == 'third_page'){//需加载第二页的动画特效
+					secondPageAnimation();
+				}else if(targetDomId == 'four_page'){//需加载第三页的动画特效
+					thirdPageAnimation();
+				}else if(targetDomId == 'five_page'){//需加载第四页的动画特效
+					fourPageAnimation();
+				}
+			}
+		}
+		//第二页动画效果
+		function secondPageAnimation(){
+			$('#second_page .second_font_show').addClass('second_font_show_hov');
+			$('#second_page .second_person').addClass('second_person_hov');
+			$('#second_page .second_red_line').addClass('second_red_line_hov');
+			$('#second_page .second_quto_down').addClass('second_quto_down_hov');
+			$('#second_page .second_yuanfen').addClass('second_yuanfen_hov');
+			$('#second_page .first_line').addClass('first_line_hov');
+			$('#second_page .second_line').addClass('second_line_hov');
+			$('#second_page .third_line').addClass('third_line_hov');
+		}
+		//第三页动画效果
+		function thirdPageAnimation(){
+			$('#third_page .third_font_show').addClass('third_font_show_hov');
+			$('#third_page .third_xinren').addClass('third_xinren_hov');
+			$('#third_page .third_red_line').addClass('third_red_line_hov');
+			$('#third_page .third_quto_down').addClass('third_quto_down_hov');
+			$('#third_page .third_person').addClass('third_person_hov');
+			$('#third_page .first_line').addClass('first_line_hov');
+			$('#third_page .second_line').addClass('second_line_hov');
+		}
+		//第四页动画效果
+		function fourPageAnimation(){
+			$('#four_page .four_font_show').addClass('four_font_show_hov');
+			$('#four_page .four_shuxi').addClass('four_shuxi_hov');
+			$('#four_page .four_red_line').addClass('four_red_line_hov');
+			$('#four_page .four_quto_down').addClass('four_quto_down_hov');
+			$('#four_page .four_person').addClass('four_person_hov');
+			$('#four_page .first_line').addClass('first_line_hov');
+			$('#four_page .second_line').addClass('second_line_hov');
+		}
+		//第五页动画效果
+		function fivePageAnimation(){
+
+		}
+	</script>
+</html>

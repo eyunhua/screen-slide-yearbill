@@ -1,0 +1,227 @@
+/* 禁用iPhone中Safari的字号自动调整 */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+/* 图片自适应 */
+img {
+    vertical-align: middle;
+    border: none;
+}
+/*清除默认样式*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, iframe, fieldset, legend, input, button, textarea, p, blockquote, th, td, a, i, del, span{
+    margin: 0;
+    padding: 0;
+    font-family:"微软雅黑";
+    word-break: break-all;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;/* 取消高亮 */
+   -webkit-focus-ring-color: rgba(0, 0, 0, 0);
+}
+:focus, :hover, :active{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+/* 设置HTML5元素为块 */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section,{
+    display: block;
+}
+::-webkit-inner-spin-button {
+     -webkit-appearance: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: inherit;
+}
+fieldset, img {
+    border: 0 none;
+}
+address, caption, cite, code, dfn, em, strong, th, var, i {
+    font-style: normal;
+    font-weight: normal;
+}
+li {
+    list-style: none outside none;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+abbr, acronym {
+    border: 0 none;
+    font-variant: normal;
+}
+sup {
+    vertical-align: text-top;
+}
+sub {
+    vertical-align: text-bottom;
+}
+pre, code, kbd, samp, tt {
+    font-family: monospace;
+    line-height: 100%;
+}
+input, textarea, button {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-size: 100%;
+    border: none; 
+    border-radius: 0;
+    background: none;
+    outline: none;
+    resize: none;
+}
+/*textarea::-webkit-scrollbar {width: 0;}*/   
+textarea{word-break: break-all;}
+/* 去除iPhone中默认的input样式  清除苹果浏览器的圆角表单*/
+input, 
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="number"];
+a, a:visited{
+    text-decoration: none;
+    cursor:pointer;
+    outline: none;
+}
+a:hover, a:focus {
+    text-decoration: none;
+}
+a:link {
+    text-decoration: none;
+}       /* 未访问的链接 */
+a:visited {
+    text-decoration: none;
+}   /* 已访问的链接 */
+a:hover {
+    text-decoration: none;
+}   /* 鼠标移动到链接上 */
+a:active {
+    text-decoration: none;
+}   /* 选定的链接 */
+q:before, q:after {
+    content: "";
+}
+/*设置body样式*/
+html,body{
+    width: 100%;
+    height: 100%;
+    /*overflow-y: hidden;*/
+}
+body {
+    font: 12px/1.231 '微软雅黑';
+    color: #333;
+}
+/* 清除浮动 */
+.fixedClear:after{
+    content: '';
+    display: block;
+    height: 0;
+    overflow: hidden;
+    clear: both;
+}
+iframe{
+    border: none;
+}
+/* 隐藏“提交工单”class */
+.submit-work-display{display: none;}
+/* 字体大小 */
+.fs12{font-size: 12px;}
+.fs13{font-size: 13px;}
+.fs15{font-size: 15px;}
+.fs16{font-size: 16px;}
+.fl{ float: left;}
+.fr{ float: right;}
+/* 字体颜色 */
+.c333{color: #333;}
+.c666{color: #666;}
+.c999{color: #999;}
+.c-blue{color: #028fd6;}
+.c-orange{color: #ff5000;}
+.c-white{color: #fff;}
+.c-red{color: #f00;}
+/* text-align对齐 */
+.ta-l{ text-align: left;}
+.ta-r{ text-align: right;}
+.ta-c{ text-align: center;}
+/* vertical对齐 */
+.v-top { vertical-align: top; }
+.v-middle { vertical-align: middle; }
+.v-bottom { vertical-align: bottom; }
+/* 内边距 */
+.pad10{ padding: 10px; }
+.pad-t10{ padding-top: 10px; }
+.pad-t20{ padding-top: 20px; }
+.pad-r5{ padding-right: 5px; }
+.pad-r8{ padding-right: 8px; }
+.pad-l5{ padding-left: 5px; }
+.pad-l8{ padding-left: 8px; }
+.pad-l20{padding-left: 20px;}
+.pad-b10 { padding-top: 10px; }
+/*外边距*/
+.mar-l10{margin-left: 10px;}
+/* 行高 */
+.l18 { line-height: 18px; }
+.l20 { line-height: 20px; }
+.l22 { line-height: 22px; }
+.l24 { line-height: 24px; }
+.l30 { line-height: 30px; }
+.l40 { line-height: 40px; }
+.l48 { line-height: 48px; }
+.l50 { line-height: 50px; }
+.lnormal{ line-height: normal; }
+/* 宽度 */
+.w100 { width: 100%; }
+.w94 { width: 94%; }
+.w90 { width: 90%; }
+.w85 { width: 85% !important; }
+.w50 { width: 50%; float: left; }
+.w33.33 { width: 33.33%; float: left; }
+.w25 { width: 25%; float: left; }
+/* 高度 */
+.h48{ height: 48px;}
+.h-auto{ height: auto;}
+/* 定位 */
+.pos-r{ position: relative; }
+.pos-a{ position: absolute; }
+.pos-f{ position: fixed; }
+/*滚动条*/
+.o-f-auto{overflow:auto;}
+.o-f-hidden{overflow: hidden;}
+.o-f-x-auto{overflow-x: auto; overflow-y:hidden;}
+.o-f-y-auto{overflow-y: auto; overflow-x:hidden;}
+.o-f-x-hidden{overflow-x: hidden;}
+
+/* 边框 */
+.bor{ border: 1px solid #e6e6e6; }
+.bor-t{ border-top: 1px solid #e6e6e6; }
+.bor-r{ border-right: 1px solid #e6e6e6; }
+.bor-b{ border-bottom: 1px solid #e6e6e6; }
+.bor-l{ border-left: 1px solid #e6e6e6; }
+.bor-no{ border:0 none; }
+/* display */
+.dis-bk{ display:block; }
+.dis-i-bk{display: inline-block;}
+.dis-none{ display: none; }
+/* 背景 */
+.bg-none{ background: none;}
+.bg-white{ background: #fff;}
+.bg-orange{ background: #ec3d00;}
+.bg-gray{ background: #eee; }
+/* text-decoration */
+.txt-de{ text-decoration: line-through; color: #999; }
+/* 其他类 */
+.cur-point{cursor: pointer;}
+.nowrap { white-space: nowrap; }
+.underline { text-decoration: underline; }
+.ununderline { text-decoration: none; }
+.tableFixed { table-layout: fixed; }
+.ellipsis { text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+
+
+  
+
+
+
+ 
